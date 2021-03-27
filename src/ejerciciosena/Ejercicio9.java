@@ -19,14 +19,12 @@ import javax.swing.JTextField;
  *
  * @author alex
  */
-public class Ejercicio1 extends JFrame implements ActionListener {
+public class Ejercicio9 extends JFrame implements ActionListener {
 
     private JButton btnInfo, btnVolver, btnCalcular;
-    private JLabel lTitulo, lValorConsignar;
-    private JTextField fldValorInicial;
-    private double valor_inicial, valor_futuro;
+    private JLabel lTitulo;
 
-    public Ejercicio1() {
+    public Ejercicio9() {
         setLayout(null); //posiciones manuales
         setTitle("Laboratorio Java");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -54,31 +52,12 @@ public class Ejercicio1 extends JFrame implements ActionListener {
         lTitulo.setFont(new Font("SansSerif", 1, 24));
         lTitulo.setForeground(new Color(200, 200, 200));
         add(lTitulo);
-        
-        lValorConsignar = new JLabel("Dinero a Consignar");
-        lValorConsignar.setBounds(40, 80, 300, 30);
-        lValorConsignar.setFont(new Font("SansSerif", 0, 16));
-        lValorConsignar.setForeground(new Color(200, 200, 200));
-        add(lValorConsignar);
-
-        fldValorInicial = new JTextField();
-        fldValorInicial.setBounds(40, 110, 150, 25);
-        fldValorInicial.setFont(new Font("SansSerif", 0, 14));
-        fldValorInicial.setForeground(new Color(100, 100, 100));
-        add(fldValorInicial);
-
-        btnCalcular = new JButton("Calcular");
-        btnCalcular.setBounds(40, 140, 100, 25);
-        btnCalcular.setFont(new Font("SansSerif", 0, 14));
-        btnCalcular.setForeground(new Color(100, 100, 100));
-        btnCalcular.addActionListener(this);
-        add(btnCalcular);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnInfo) {
-            JOptionPane.showMessageDialog(null, "Una persona deposita hoy al Banco cierta cantidad de dinero, donde le reconocen un interés del 2% mensual, capitalizado mensualmente. \n¿Cuál será el saldo al cabo de 5 años? ", "Evidencia 1", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "%MESG%", "Evidencia 1", JOptionPane.INFORMATION_MESSAGE);
         }
         if (e.getSource() == btnVolver) {
             Principal principal = new Principal();
@@ -87,11 +66,6 @@ public class Ejercicio1 extends JFrame implements ActionListener {
             principal.setBounds(0, 0, 350, 300);
             principal.setResizable(false);
             principal.setLocationRelativeTo(null);//centrar ventana
-        }
-        if (e.getSource() == btnCalcular) {
-            valor_inicial = Double.parseDouble(fldValorInicial.getText());
-            valor_futuro = valor_inicial * (1+0.02) * 60;
-            JOptionPane.showMessageDialog(null, "El valor consignado es de " + valor_inicial + ".\nEl valor a 5 años es de: " + valor_futuro, "Resultado", JOptionPane.INFORMATION_MESSAGE);
         }
     }
     
