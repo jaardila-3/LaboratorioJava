@@ -50,7 +50,7 @@ public class Ejercicio4 extends JFrame implements ActionListener {
         add(btnVolver);
 
         lTitulo = new JLabel("Cantidad de nùmeros");
-        lTitulo.setBounds(60, 50, 300, 30);
+        lTitulo.setBounds(20, 50, 300, 30);
         lTitulo.setFont(new Font("SansSerif", 1, 24));
         lTitulo.setForeground(new Color(200, 200, 200));
         add(lTitulo);
