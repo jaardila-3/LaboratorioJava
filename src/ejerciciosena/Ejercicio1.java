@@ -78,7 +78,7 @@ public class Ejercicio1 extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnInfo) {
-            JOptionPane.showMessageDialog(null, "Una persona deposita hoy al Banco cierta cantidad de dinero, donde le reconocen un interés del 2% mensual, capitalizado mensualmente. \n¿Cuál será el saldo al cabo de 5 años? ", "Evidencia 1", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Una persona deposita hoy al Banco cierta \ncantidad de dinero, donde le reconocen un \ninterés del 2% mensual, capitalizado mensualmente. \n¿Cuál será el saldo al cabo de 5 años? ", "Evidencia 1", JOptionPane.INFORMATION_MESSAGE);
         }
         if (e.getSource() == btnVolver) {
             Principal principal = new Principal();

@@ -57,7 +57,7 @@ public class Ejercicio8 extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnInfo) {
-            JOptionPane.showMessageDialog(null, "%MESG%", "Evidencia 1", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "%MESG%", "Evidencia 8", JOptionPane.INFORMATION_MESSAGE);
         }
         if (e.getSource() == btnVolver) {
             Principal principal = new Principal();
@@ -70,7 +70,7 @@ public class Ejercicio8 extends JFrame implements ActionListener {
     }
     
     public static void main(String[] args) {
-        Ejercicio1 ejercicio1 = new Ejercicio1();
+        Ejercicio8 ejercicio1 = new Ejercicio8();
         ejercicio1.setBounds(0, 0, 350, 300);
         ejercicio1.setVisible(true);
         ejercicio1.setResizable(false);

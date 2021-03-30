@@ -82,7 +82,7 @@ public class Ejercicio4 extends JFrame implements ActionListener {
                     + "calcule la suma de sus dígitos y que imprima en pantalla el número leído y la suma de sus dígitos. \n"
                     + "Se requiere que en el desarrollo utilice la Estructura Cíclica Mientras. \n"
                     + "Ejemplo: \n"
-                    + "N= 3567 SUMA= 21", "Evidencia 1", JOptionPane.INFORMATION_MESSAGE);
+                    + "N= 3567 SUMA= 21", "Evidencia 4", JOptionPane.INFORMATION_MESSAGE);
         }
         if (e.getSource() == btnVolver) {
             Principal principal = new Principal();
