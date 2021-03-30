@@ -22,7 +22,9 @@ import javax.swing.JTextField;
 public class Ejercicio8 extends JFrame implements ActionListener {
 
     private JButton btnInfo, btnVolver, btnCalcular;
-    private JLabel lTitulo;
+    private JLabel lTitulo, lDuracion;
+    private JTextField tfDuracion;   
+    private double costo, minutos;
 
     public Ejercicio8() {
         setLayout(null); //posiciones manuales
@@ -47,17 +49,36 @@ public class Ejercicio8 extends JFrame implements ActionListener {
         btnVolver.addActionListener(this);
         add(btnVolver);
         
-        lTitulo = new JLabel("Banco");
-        lTitulo.setBounds(80, 50, 300, 30);
+        lTitulo = new JLabel("llamada telefónica");
+        lTitulo.setBounds(40, 50, 300, 30);
         lTitulo.setFont(new Font("SansSerif", 1, 24));
         lTitulo.setForeground(new Color(200, 200, 200));
         add(lTitulo);
+        
+        lDuracion = new JLabel("Duración de la llamada");
+        lDuracion.setBounds(70, 80, 200, 30);
+        lDuracion.setFont(new Font("SansSerif", 0, 14));
+        lDuracion.setForeground(new Color(200, 200, 200));
+        add(lDuracion);
+        
+        tfDuracion=new JTextField("1");
+        tfDuracion.setBounds(70, 110, 150, 25);
+        tfDuracion.setFont(new Font("SansSerif", 0, 14));
+        tfDuracion.setForeground(new Color(40, 40, 40));
+        add(tfDuracion);
+        
+        btnCalcular = new JButton("Calcular");
+        btnCalcular.setBounds(90, 150, 100, 25);
+        btnCalcular.setFont(new Font("SansSerif", 0, 14));
+        btnCalcular.setForeground(new Color(100, 100, 100));
+        btnCalcular.addActionListener(this);
+        add(btnCalcular);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnInfo) {
-            JOptionPane.showMessageDialog(null, "%MESG%", "Evidencia 8", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Hacer un algoritmo que imprima el costo de una llamada telefónica,\ncapturando la duración de la llamada en minutos", "Evidencia 8", JOptionPane.INFORMATION_MESSAGE);
         }
         if (e.getSource() == btnVolver) {
             Principal principal = new Principal();
@@ -66,6 +87,18 @@ public class Ejercicio8 extends JFrame implements ActionListener {
             principal.setBounds(0, 0, 350, 300);
             principal.setResizable(false);
             principal.setLocationRelativeTo(null);//centrar ventana
+        }
+        if (e.getSource() == btnCalcular) {
+            minutos = Double.parseDouble(tfDuracion.getText());
+            if (minutos<=3) {
+                costo=200;
+            }else{
+                minutos-=3;
+		minutos*=30;
+		costo=minutos+200;
+            }
+        JOptionPane.showMessageDialog(null, "El costo de la llamada telefónica es de: "+costo+" pesos", "Factura", JOptionPane.INFORMATION_MESSAGE);
+
         }
     }
     
