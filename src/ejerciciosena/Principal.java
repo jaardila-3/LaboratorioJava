@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ejerciciosena;
 
 import java.awt.Color;
@@ -16,11 +12,13 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 /**
- *
- * @author alex
+ * Esta es la clase principal donde hay un menú que redirije hacia los ejercicios
+ * @author Jorge Ardila y Luis Mora
+ * @version 1.0
  */
 public class Principal extends JFrame implements ActionListener {
 
+    //atributos de la clase
     private JMenuBar menu;
     private JMenu opciones;
     private JMenuItem ejercicio1, ejercicio2, ejercicio3,
@@ -28,12 +26,15 @@ public class Principal extends JFrame implements ActionListener {
     private JLabel lLaboratorio, lAlex, lLuis;
 
     /**
-     * constructor
+     * constructor para el jframe
      */
     public Principal() {
-        setLayout(null); //posiciones manuales
+        //quitar el layout y poner posiciones con setbouns
+        setLayout(null); 
         setTitle("Laboratorio Java");
+        //para evitar que se siga ejecutando en segundo plano
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //color de fondo del contenedor
         getContentPane().setBackground(new Color(50, 50, 50));
         //inicializamos los atributos
         menu = new JMenuBar();
@@ -93,7 +94,11 @@ public class Principal extends JFrame implements ActionListener {
         add(lLuis);
 
     }
-
+    /**
+     * método de la interface ActionListener para capturar el evento click
+     * este metodo dara la funcionalidad a cada menuItem
+     * @param e el parametro e define el evento que sucede
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == ejercicio1) {
@@ -177,13 +182,20 @@ public class Principal extends JFrame implements ActionListener {
             ejercicio9.setLocationRelativeTo(null);//centrar ventana
         }
     }
-
+    /**
+     * método main que ejecuta la clase
+     * @param args el parametro args es un arreglo string que se puede recibir o no
+     */
     public static void main(String[] args) {
         Principal principal = new Principal();
+        //coordenadas de ubicacion y tamaño
         principal.setBounds(0, 0, 350, 300);
+        //ser visible el frame
         principal.setVisible(true);
+        //redimencionar
         principal.setResizable(false);
-        principal.setLocationRelativeTo(null);//centrar ventana
+        //centra la ventana en centro de la pantalla
+        principal.setLocationRelativeTo(null);
 
     }
 
