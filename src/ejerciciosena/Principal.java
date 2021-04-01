@@ -119,15 +119,7 @@ public class Principal extends JFrame implements ActionListener {
             ejercicio2.setBounds(0, 0, 350, 300);
             ejercicio2.setResizable(false);
             ejercicio2.setLocationRelativeTo(null);//centrar ventana
-        }
-        if (e.getSource() == ejercicio2) {
-            Ejercicio2 ejercicio2 = new Ejercicio2();
-            ejercicio2.setVisible(true);
-            this.setVisible(false);
-            ejercicio2.setBounds(0, 0, 350, 300);
-            ejercicio2.setResizable(false);
-            ejercicio2.setLocationRelativeTo(null);//centrar ventana
-        }
+        }        
         if (e.getSource() == ejercicio3) {
             Ejercicio3 ejercicio3 = new Ejercicio3();
             ejercicio3.setVisible(true);
