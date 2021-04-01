@@ -85,10 +85,11 @@ public class Ejercicio6 extends JFrame implements ActionListener {
         if (e.getSource() == btnVolver) {
             Principal principal = new Principal();
             principal.setVisible(true);
-            this.setVisible(false);
             principal.setBounds(0, 0, 350, 300);
             principal.setResizable(false);
-            principal.setLocationRelativeTo(null);//centrar ventana
+            principal.setLocationRelativeTo(null);
+            //cierra la ventana mas no la aplicación.
+            this.dispose();
         }
         if (e.getSource() == btnCalcular) {
             while (contador<=20) {                

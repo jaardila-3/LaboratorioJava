@@ -124,10 +124,11 @@ public class Ejercicio7 extends JFrame implements ActionListener, ChangeListener
         if (e.getSource() == btnVolver) {
             Principal principal = new Principal();
             principal.setVisible(true);
-            this.setVisible(false);
             principal.setBounds(0, 0, 350, 300);
             principal.setResizable(false);
-            principal.setLocationRelativeTo(null);//centrar ventana
+            principal.setLocationRelativeTo(null);
+            //cierra la ventana mas no la aplicación.
+            this.dispose();
         }
         if (e.getSource() == btnRegistrar) {            
             edad = Integer.parseInt(tfEdad.getText());
