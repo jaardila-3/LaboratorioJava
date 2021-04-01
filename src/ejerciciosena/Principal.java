@@ -1,4 +1,3 @@
-
 package ejerciciosena;
 
 import java.awt.Color;
@@ -12,7 +11,9 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 /**
- * Esta es la clase principal donde hay un menú que redirije hacia los ejercicios
+ * Esta es la clase principal donde hay un menú que redirije hacia los
+ * ejercicios
+ *
  * @author Jorge Ardila y Luis Mora
  * @version 1.0
  */
@@ -30,7 +31,7 @@ public class Principal extends JFrame implements ActionListener {
      */
     public Principal() {
         //quitar el layout y poner posiciones con setbouns
-        setLayout(null); 
+        setLayout(null);
         setTitle("Laboratorio Java");
         //para evitar que se siga ejecutando en segundo plano
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -94,9 +95,11 @@ public class Principal extends JFrame implements ActionListener {
         add(lLuis);
 
     }
+
     /**
-     * método de la interface ActionListener para capturar el evento click
-     * este metodo dara la funcionalidad a cada menuItem
+     * método de la interface ActionListener para capturar el evento click este
+     * metodo dara la funcionalidad a cada menuItem
+     *
      * @param e el parametro e define el evento que sucede
      */
     @Override
@@ -182,9 +185,12 @@ public class Principal extends JFrame implements ActionListener {
             ejercicio9.setLocationRelativeTo(null);//centrar ventana
         }
     }
+
     /**
      * método main que ejecuta la clase
-     * @param args el parametro args es un arreglo string que se puede recibir o no
+     *
+     * @param args el parametro args es un arreglo string que se puede recibir o
+     * no
      */
     public static void main(String[] args) {
         Principal principal = new Principal();
