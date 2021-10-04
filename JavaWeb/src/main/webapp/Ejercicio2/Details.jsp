@@ -43,9 +43,10 @@
                             Bus.bus.bajarPasajeros(bajarPasajeros);
                         }
                         if (Bus.bus.getPlaca() != null) {
+                            int control = Bus.bus.getCapacidadPasajeros() - Bus.bus.getPasajerosActuales();
                     %>
                     <!-- Button trigger modal Placa -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticPlaca">
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticPlaca">
                         Obtener placa
                     </button>
 
@@ -68,7 +69,7 @@
                     </div>
 
                     <!-- Button trigger modal capacidad -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticCapacidad">
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticCapacidad">
                         Obtener capacidad
                     </button>
 
@@ -91,7 +92,7 @@
                     </div>
 
                     <!-- Button trigger modal precio -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticPrecio">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticPrecio">
                         Obtener precio
                     </button>
 
@@ -114,7 +115,7 @@
                     </div>
 
                     <!-- Button trigger modal pasajeros actuales -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticPasajeros">
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticPasajeros">
                         Pasajeros actuales
                     </button>
 
@@ -138,7 +139,7 @@
 
 
                     <!-- Button trigger modal pasajeros totales -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticPasajerosTotales">
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticPasajerosTotales">
                         Total pasajeros
                     </button>
 
@@ -162,7 +163,7 @@
 
 
                     <!-- Button trigger modal dinero acumulado -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticAcumulado">
+                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticAcumulado">
                         Dinero acumulado
                     </button>
 
@@ -186,21 +187,17 @@
 
                     <div class="col-6 mt-3">
                         <form action="Details.jsp" method="post">
-                            <div class="col-4">
-                                <label for="subirPasajeros">Subir pasajeros al bus</label>
-                            </div>
-                            <div class="input-group">
-                                <input type="number" class="form-control" name="subirPasajeros" value="0" >
-                                <input type="submit" class="btn btn-primary" value="Enviar"/>
+                            <div class="col-6">
+                                <label for="subirPasajeros">Subir pasajeros al bus (max:<%=control%>)</label>                            
+                                <input type="number" class="form-control" name="subirPasajeros" value="0" max="<%=control%>" required="required cantidad">
                             </div>
 
-                            <div class="col-4">
-                                <label for="bajarPasajeros">Bajar pasajeros del bus</label>
+                            <div class="col-6 mt-3 mb-3">
+                                <label for="bajarPasajeros">Bajar pasajeros del bus (max:<%=Bus.bus.getPasajerosActuales()%>)</label>
+                                <input type="number" class="form-control" name="bajarPasajeros" value="0" max="<%=Bus.bus.getPasajerosActuales()%>" required="required cantidad">
                             </div>
-                            <div class="input-group">
-                                <input type="number" class="form-control" name="bajarPasajeros" value="0" >
-                                <input type="submit" class="btn btn-primary" value="Enviar"/>
-                            </div>
+                            
+                            <input type="submit" class="btn btn-primary" value="Enviar"/>
 
                         </form>
                     </div>

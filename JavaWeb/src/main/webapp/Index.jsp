@@ -37,10 +37,10 @@
                                             <a class="nav-link active" aria-current="page" href="Ejercicio2/Create.jsp">Ejercicio2</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="#">Ejercicio3</a>
+                                            <a class="nav-link active" aria-current="page" href="Ejercicio3/Create.jsp">Ejercicio3</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link active" aria-current="page" href="#">Ejercicio4</a>
+                                            <a class="nav-link active" aria-current="page" href="Ejercicio4/CreateBank.jsp">Ejercicio4</a>
                                         </li>
                                     </ul>
                                     <form class="d-flex">
