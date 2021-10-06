@@ -10,7 +10,7 @@ public class Persona extends Cliente {
     private int edad;
 
     public Persona(String cedula, int edad, String nombre) {
-        super(nombre); // de la clase padre
+        super(nombre); // constructor de la clase padre
         this.cedula = cedula;
         this.edad = edad;
     }
@@ -25,5 +25,8 @@ public class Persona extends Cliente {
     }
     
     public void cumplirAños(){}
+    
+    @Override
+    public String obtTipo(){ return "Persona";}
 
 }

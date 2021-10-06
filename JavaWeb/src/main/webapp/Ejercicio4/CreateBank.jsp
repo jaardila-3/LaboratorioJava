@@ -25,28 +25,15 @@
                         <a href="../Index.jsp">Volver</a>
                     </div>
 
-                    <h1 class="mt-4">Datos de la cuenta</h1>
+                    <h1 class="mt-4">Datos del Banco</h1>
 
                     <form action="Details.jsp" method="post">
 
                         <div class="form-group col-4 mt-3">
-                            <label for="cuenta">Número de la cuenta</label>
-                            <input type="text" class="form-control" name="cuenta" value="0000-0000-0001" required="required">
+                            <label for="nombre">Nombre del banco</label>
+                            <input type="text" class="form-control" name="nombre" required="required">
                         </div>
-
-                        <div class="form-group col-4 mt-3">
-                            <label for="tipo">Seleccione el tipo de cuenta</label>
-                            <select class="form-control" name="tipo">
-                                <option value="ahorro">ahorro</option>
-                                <option value="credito">crédito</option>                                
-                            </select>
-                        </div>                                                
-
-                        <div class="form-group col-4 mt-3">
-                            <label for="inicial">Valor inicial</label>
-                            <input type="number" class="form-control" name="inicial" value="100" required="required" min="100">
-                        </div>
-
+                        
                         <div class="mt-3">
                             <input type="submit" class="btn btn-primary" name="enviar" value="Guardar"/>
                         </div>

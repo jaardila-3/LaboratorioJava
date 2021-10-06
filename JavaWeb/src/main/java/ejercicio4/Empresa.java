@@ -28,4 +28,7 @@ public class Empresa extends Cliente {
         this.representante = repres;
         return representante;
     }
+    
+    @Override
+    public String obtTipo(){ return "Empresa";}
 }

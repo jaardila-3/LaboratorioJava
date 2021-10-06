@@ -1,7 +1,6 @@
 package ejercicio4;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -10,16 +9,26 @@ import java.util.List;
 public class Banco {
 
     private String nombre;
-    private List<Cliente> clientes = new ArrayList();
+    private ArrayList<Cliente> clientes;
+    private ArrayList<Persona> personas;
+    private ArrayList<Empresa> empresas;
     private int numeroDeClientes;
 
     public static Banco banco = new Banco();
 
     private Banco() {
+        clientes = new ArrayList<Cliente>();
+        personas = new ArrayList<Persona>();
+        empresas = new ArrayList<Empresa>();
     }
 
     public Banco(String nombre) {
-        banco.nombre = nombre;
+        if (banco.nombre == null) {
+            banco.nombre = nombre;
+            banco.clientes = new ArrayList<Cliente>();
+            banco.personas = new ArrayList<Persona>();
+            banco.empresas = new ArrayList<Empresa>();
+        }
     }
 
     public String getNombre() {
@@ -34,13 +43,13 @@ public class Banco {
         return clientes.get(position);
     }
 
-    public List<Cliente> getClientes() {
+    public ArrayList<Cliente> getClientes() {
         return clientes;
-    }    
+    }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }    
+    }
 
     public void addCliente(Cliente clie) {
         clientes.add(clie);
@@ -48,7 +57,22 @@ public class Banco {
 
     public void reset() {
         banco.nombre = null;
-        banco.clientes = null;
-        banco.numeroDeClientes = 0;
+    }
+
+    //OTROS METODOS IMPLEMENTADOS
+    public void addPersona(Persona clie) {
+        personas.add(clie);
+    }
+
+    public void addEmpresa(Empresa clie) {
+        empresas.add(clie);
+    }
+
+    public ArrayList<Persona> getPersonas() {
+        return personas;
+    }
+
+    public ArrayList<Empresa> getEmpresas() {
+        return empresas;
     }
 }

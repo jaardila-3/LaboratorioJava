@@ -18,5 +18,7 @@ public abstract class Cliente {
 
     //Los métodos abstractos se escriben sin llaves {} y con ; al final
     public abstract String obtIdentificacion();
+    
+    public abstract String obtTipo();
 
 }

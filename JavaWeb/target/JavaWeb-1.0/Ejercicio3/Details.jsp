@@ -23,7 +23,7 @@
                         <a href="Create.jsp">Volver</a>
                     </div>
 
-                    <h1 class="mt-4">Recorrido del Bus</h1>
+                    <h1 class="mt-4">Transacciones bancarias</h1>
                     <%
                         String cuenta = request.getParameter("cuenta");
                         String tipo = request.getParameter("tipo");
