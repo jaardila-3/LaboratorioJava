@@ -123,7 +123,7 @@
 
                             <div class="col-6 mt-3 mb-3">
                                 <label for="retirar">Retirar (max: <%=control%>)</label>
-                                <input type="number" class="form-control" name="bajarPasajeros" value="0" max="<%=control%>" required="required cantidad">
+                                <input type="number" class="form-control" name="retirar" value="0" max="<%=control%>" required="required cantidad">
                             </div>
 
                             <input type="submit" class="btn btn-primary" value="Enviar"/>

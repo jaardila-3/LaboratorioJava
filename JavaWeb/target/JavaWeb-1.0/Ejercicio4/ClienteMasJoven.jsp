@@ -7,7 +7,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="ejercicio4.Banco" %>
 <%@page import="ejercicio4.Persona" %>
-<% int contador = 0;%>
 
 <!DOCTYPE html>
 <html>
@@ -39,21 +38,27 @@
                         </thead>
                         <tbody>
                             <%
-                                for (Persona clie : Banco.banco.getPersonas()) {
-                                    contador++;
-                                    if (clie.getEdad() < 18) {
+                                if (Banco.banco.getPersonas().size() > 0) {
+
+                                    Persona masjoven = Banco.banco.getPersonas().get(0);
+                                    int edad = Banco.banco.getPersonas().get(0).getEdad();
+                                    for (Persona clie : Banco.banco.getPersonas()) {
+                                        if (clie.getEdad() < edad) {
+                                            edad = clie.getEdad();
+                                            masjoven = clie;
+                                        }
+                                    }
                             %>
                             <tr>
-                                <th scope="row"><%=contador%></th>
-                                <td><%=clie.getNombre()%></td>
-                                <td><%=clie.obtIdentificacion()%></td>
-                                <td><%=clie.getEdad()%></td>
+                                <th scope="row">1</th>
+                                <td><%=masjoven.getNombre()%></td>
+                                <td><%=masjoven.obtIdentificacion()%></td>
+                                <td><%=masjoven.getEdad()%></td>
                             </tr>
                             <%
-                                    }
+
                                 }
                             %>
-
 
                         </tbody>
                     </table>
